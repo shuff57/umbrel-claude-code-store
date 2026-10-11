@@ -1,0 +1,23 @@
+manifestVersion: 1
+id: shuff57-orca
+category: developer
+name: Orca
+version: "1.4.224"
+tagline: Run a fleet of parallel coding agents (desktop streamed to your browser)
+description: >-
+  Orca (stablyai/orca) is an agent workspace that runs Claude Code, Codex and others
+  in parallel git worktrees. This app runs the Linux desktop build inside a
+  browser-streamed XFCE desktop. Claude Code is preinstalled; sign in from a terminal
+  inside the desktop. First start downloads ~250 MB and takes a few minutes.
+developer: shuff57
+website: https://github.com/stablyai/orca
+dependencies: []
+repo: https://github.com/stablyai/orca
+support: ""
+port: 3000
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: shuff57
+submission: ""
