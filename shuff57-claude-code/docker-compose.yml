@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: shuff57-claude-code_web_1
+      APP_PORT: 7681
+
+  web:
+    image: node:22-bookworm
+    restart: on-failure
+    working_dir: /home/node
+    volumes:
+      - ${APP_DATA_DIR}/data/home:/home/node
+    command:
+      - bash
+      - -c
+      - |
+        set -e
+        if ! command -v ttyd >/dev/null; then
+          apt-get update && apt-get install -y --no-install-recommends ttyd git ripgrep && rm -rf /var/lib/apt/lists/*
+        fi
+        chown node:node /home/node
+        exec su node -c '
+          export PATH=/home/node/.npm-global/bin:$$PATH
+          [ -x /home/node/.npm-global/bin/claude ] || npm install -g --prefix /home/node/.npm-global @anthropic-ai/claude-code
+          mkdir -p /home/node/workspace && cd /home/node/workspace
+          exec ttyd -W -p 7681 bash
+        '

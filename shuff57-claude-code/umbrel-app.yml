@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: shuff57-claude-code
+category: developer
+name: Claude Code
+version: "1.0.0"
+tagline: Anthropic's coding agent in a web terminal
+description: >-
+  Runs Claude Code inside a container and serves it as a browser terminal.
+  Open the app, run `claude`, and sign in (OAuth link or ANTHROPIC_API_KEY).
+  Your login and a workspace folder persist in the app's data directory.
+developer: shuff57
+website: https://claude.com/claude-code
+dependencies: []
+repo: ""
+support: ""
+port: 7681
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: shuff57
+submission: ""
